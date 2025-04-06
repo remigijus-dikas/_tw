@@ -1,6 +1,6 @@
 # Undertailwind
 
-[![Build Status](https://travis-ci.org/Automattic/_tw.svg?branch=master)](https://travis-ci.org/Automattic/_tw)
+[![Build Status](https://github.com/wp-remis/_tw/actions/workflows/main.yml/badge.svg)](https://github.com/wp-remis/_tw/actions)
 
 Undertailwind is a modern, blank WordPress starter theme based on [_s (Underscores)](https://underscores.me/) and powered by **Tailwind CSS v4**. It's built for developers who want a clean slate, modern build tools, and total design freedom.
 
