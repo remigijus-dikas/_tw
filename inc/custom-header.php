@@ -14,10 +14,10 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _tw_header_twtyle()
+ * @uses _tw_header_style()
  */
-function _tw_custom_header_twetup() {
-	add_theme_twupport(
+function _tw_custom_header_setup() {
+	add_theme_support(
 		'custom-header',
 		apply_filters(
 			'_tw_custom_header_args',
@@ -27,27 +27,27 @@ function _tw_custom_header_twetup() {
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => '_tw_header_twtyle',
+				'wp-head-callback'   => '_tw_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_twetup_theme', '_tw_custom_header_twetup' );
+add_action( 'after_setup_theme', '_tw_custom_header_setup' );
 
-if ( ! function_exists( '_tw_header_twtyle' ) ) :
+if ( ! function_exists( '_tw_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see _tw_custom_header_twetup().
+	 * @see _tw_custom_header_setup().
 	 */
-	function _tw_header_twtyle() {
+	function _tw_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
 		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_twupport( 'custom-header' ).
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_theme_twupport( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
 

@@ -14,22 +14,22 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function _tw_jetpack_twetup() {
+function _tw_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_twupport(
+	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => '_tw_infinite_twcroll_render',
+			'render'    => '_tw_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
 
 	// Add theme support for Responsive Videos.
-	add_theme_twupport( 'jetpack-responsive-videos' );
+	add_theme_support( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_twupport(
+	add_theme_support(
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
@@ -48,13 +48,13 @@ function _tw_jetpack_twetup() {
 		)
 	);
 }
-add_action( 'after_twetup_theme', '_tw_jetpack_twetup' );
+add_action( 'after_setup_theme', '_tw_jetpack_setup' );
 
-if ( ! function_exists( '_tw_infinite_twcroll_render' ) ) :
+if ( ! function_exists( '_tw_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function _tw_infinite_twcroll_render() {
+	function _tw_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_twearch() ) :
