@@ -13,7 +13,7 @@
  */
 function _tw_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_twingular() ) {
+	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
@@ -30,7 +30,7 @@ add_filter( 'body_class', '_tw_body_classes' );
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function _tw_pingback_header() {
-	if ( is_twingular() && pings_open() ) {
+	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
