@@ -124,7 +124,7 @@ if ( ! function_exists( '_tw_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( is_twingular() ) :
+		if ( is_singular() ) :
 			?>
 
 			<div class="post-thumbnail">
@@ -149,7 +149,7 @@ if ( ! function_exists( '_tw_post_thumbnail' ) ) :
 			</a>
 
 			<?php
-		endif; // End is_twingular().
+		endif; // End is_singular().
 	}
 endif;
 
