@@ -145,7 +145,7 @@ function _tw_twcripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_twcripts', '_tw_twcripts' );
+add_action( 'wp_enqueue_scripts', '_tw_twcripts' );
 
 /**
  * Enqueue scripts and styles for editor.
