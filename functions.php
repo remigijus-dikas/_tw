@@ -7,9 +7,9 @@
  * @package Undertailwind
  */
 
-if ( ! defined( '_tw_VERSION' ) ) {
+if ( ! defined( '_TW_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_tw_VERSION', '1.0.0' );
+	define( '_TW_VERSION', '1.0.0' );
 }
 
 /**
@@ -138,8 +138,8 @@ add_action( 'widgets_init', '_tw_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _tw_twcripts() {
-	wp_enqueue_style( '_tw-tailwind', get_template_directory_uri() . '/dist/css/main.min.css', array(), _S_VERSION );
-	wp_enqueue_script( '_tw-main', get_template_directory_uri() . '/dist/js/main.min.js', array( 'jquery' ), _S_VERSION, true );
+	wp_enqueue_style( '_tw-tailwind', get_template_directory_uri() . '/dist/css/main.min.css', array(), _TW_VERSION );
+	wp_enqueue_script( '_tw-main', get_template_directory_uri() . '/dist/js/main.min.js', array( 'jquery' ), _TW_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -151,8 +151,8 @@ add_action( 'wp_enqueue_twcripts', '_tw_twcripts' );
  * Enqueue scripts and styles for editor.
  */
 function mytheme_enqueue_editor_scripts() {
-    wp_enqueue_style( '_tw-tailwind-editor', get_template_directory_uri() . '/dist/css/editor.min.css', array(), _S_VERSION );
-    wp_enqueue_script( '_tw-main-editor', get_template_directory_uri() . '/dist/js/editor.min.js', array( 'jquery' ), _S_VERSION, true );
+    wp_enqueue_style( '_tw-tailwind-editor', get_template_directory_uri() . '/dist/css/editor.min.css', array(), _TW_VERSION );
+    wp_enqueue_script( '_tw-main-editor', get_template_directory_uri() . '/dist/js/editor.min.js', array( 'jquery' ), _TW_VERSION, true );
 }
 add_action( 'enqueue_block_editor_assets', 'mytheme_enqueue_editor_scripts' );
 
@@ -182,4 +182,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
