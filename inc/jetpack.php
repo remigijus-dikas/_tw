@@ -57,7 +57,7 @@ if ( ! function_exists( '_tw_infinite_scroll_render' ) ) :
 	function _tw_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
-			if ( is_twearch() ) :
+			if ( is_search() ) :
 				get_template_part( 'template-parts/content', 'search' );
 			else :
 				get_template_part( 'template-parts/content', get_post_type() );

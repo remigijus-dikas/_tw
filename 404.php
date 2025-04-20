@@ -21,7 +21,7 @@ get_header();
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_tw' ); ?></p>
 
 					<?php
-					get_twearch_form();
+					get_search_form();
 
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
@@ -45,7 +45,7 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$_tw_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_tw' ), convert_twmilies( ':)' ) ) . '</p>';
+					$_tw_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_tw' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$_tw_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
